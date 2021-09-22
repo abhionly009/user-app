@@ -1,0 +1,19 @@
+.App {
+  height: 100vh;
+  /* display: flex; */
+}
+
+.app__body {
+  display: flex;
+  height: 100vh;
+}
+
+.app__withHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.app_sidebar {
+  display: flex;
+  flex-direction: row;
+}

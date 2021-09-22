@@ -1,0 +1,16 @@
+.userRow {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  background-color: burlywood;
+}
+
+.userRow > p {
+  margin: 5px;
+}
+
+.userRow > h5 {
+  margin: 5px;
+}

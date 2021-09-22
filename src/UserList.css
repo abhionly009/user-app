@@ -1,0 +1,7 @@
+.userList {
+  display: flex;
+  flex-direction: column;
+  /* background-color: wheat; */
+  margin: 10px;
+  flex: 1;
+}
