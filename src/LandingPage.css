@@ -1,0 +1,22 @@
+.landingPage {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: teal;
+
+  background-image: linear-gradient(
+    to right,
+    rgb(170, 226, 226),
+    rgb(135, 206, 135)
+  );
+}
+
+.landingPage__left {
+  flex: 0.5;
+  display: flex;
+}
+
+.landingPage__right {
+  flex: 0.5;
+  display: flex;
+}

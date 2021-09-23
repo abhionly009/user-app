@@ -1,0 +1,11 @@
+.countryRow {
+  display: flex;
+  border-bottom: 1px solid whitesmoke;
+  background-color: wheat;
+}
+
+.countryRow > h1,
+h6 {
+  color: white;
+  padding: 10px;
+}

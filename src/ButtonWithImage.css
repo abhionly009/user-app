@@ -1,0 +1,18 @@
+.buttonWithImage {
+  display: flex;
+  border: 1px solid whitesmoke;
+  width: 18rem;
+  margin-top: 10px;
+  z-index: 999;
+  box-shadow: 3px 2px whitesmoke;
+}
+
+.buttonWithImage > img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.buttonWithImage > h3 {
+  color: white;
+  padding: 10px;
+}

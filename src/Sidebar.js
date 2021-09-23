@@ -6,16 +6,27 @@ import PersonAddDisabledIcon from "@material-ui/icons/PersonAddDisabled";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import ProductionQuantityLimitsIcon from "@material-ui/icons/Category";
 import LocationCityIcon from "@material-ui/icons/LocationCity";
+import { Link, NavLink } from "react-router-dom";
 
 function Sidebar() {
   return (
     <div className="sidebar">
-      <SidebarOption Icon={ListAltIcon} title="Active Users" />
-      <SidebarOption Icon={People} title="Total Users" selected />
-      <SidebarOption Icon={PersonAddDisabledIcon} title="Inactive User" />
+      <Link to="/userList">
+        <SidebarOption Icon={ListAltIcon} title="Active Users" selected />
+      </Link>
+      <NavLink to="/" activeClassName="active">
+        <SidebarOption Icon={People} title="Total Users" />
+      </NavLink>
+      <Link to="/">
+        <SidebarOption Icon={PersonAddDisabledIcon} title="Inactive User" />
+      </Link>
+      <Link to="/country">
+        <SidebarOption Icon={LocationCityIcon} title="Country" />
+      </Link>
 
-      <SidebarOption Icon={LocationCityIcon} title="Country" />
-      <SidebarOption Icon={ProductionQuantityLimitsIcon} title="Products" />
+      <Link to="/product">
+        <SidebarOption Icon={ProductionQuantityLimitsIcon} title="Products" />
+      </Link>
     </div>
   );
 }

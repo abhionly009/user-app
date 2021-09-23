@@ -3,4 +3,10 @@
   max-width: 300px;
   padding-right: 20px;
   background-color: whitesmoke;
+  height: 100vh;
+}
+
+.active {
+  color: white;
+  background-color: rgb(209, 194, 58);
 }

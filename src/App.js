@@ -5,7 +5,9 @@ import Sidebar from "./Sidebar";
 import Home from "./Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import UserList from "./UserList";
-import Login from "./Login";
+import LandingPage from "./LandingPage";
+import Product from "./Product";
+import Country from "./Country";
 
 function App() {
   return (
@@ -13,7 +15,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/login">
-            <Login />
+            <LandingPage />
           </Route>
 
           <div className="app__withHeader">
@@ -22,15 +24,26 @@ function App() {
             <div className="app_sidebar">
               <Sidebar />
 
-              <Route exact path="/userList">
+              <Route path="/userList">
                 <UserList />
               </Route>
 
-              <Route exact path="/">
+              <Route path="/product">
+                <Product />
+              </Route>
+
+              <Route path="/country">
+                <Country />
+              </Route>
+              <Route path="/home">
                 <Home />
               </Route>
             </div>
           </div>
+
+          <Route path="/">
+            <LandingPage />
+          </Route>
         </Switch>
       </div>
     </Router>

@@ -1,0 +1,14 @@
+.country {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+  flex-direction: column;
+  width: inherit;
+  flex: 1;
+}
+
+.country__card {
+  padding: 20px;
+  border-bottom: 1px solid whitesmoke;
+}

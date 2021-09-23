@@ -7,8 +7,8 @@ function Home() {
   return (
     <div className="home">
       <h3>User List</h3>
-      {/* <UserList /> */}
-      <Product />
+      <UserList />
+      {/* <Product /> */}
     </div>
   );
 }
