@@ -8,6 +8,7 @@ import UserList from "./UserList";
 import LandingPage from "./LandingPage";
 import Product from "./Product";
 import Country from "./Country";
+import Category from "./Category";
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
 
               <Route path="/product">
                 <Product />
+              </Route>
+
+              <Route path="/category">
+                <Category />
               </Route>
 
               <Route path="/country">

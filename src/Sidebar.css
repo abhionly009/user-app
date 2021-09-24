@@ -7,7 +7,7 @@
   background-color: whitesmoke;
 }
 
-.active {
+.active a {
   color: white;
   background-color: rgb(209, 194, 58);
 }

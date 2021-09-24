@@ -6,26 +6,54 @@ import PersonAddDisabledIcon from "@material-ui/icons/PersonAddDisabled";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import ProductionQuantityLimitsIcon from "@material-ui/icons/Category";
 import LocationCityIcon from "@material-ui/icons/LocationCity";
-import { Link, NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Sidebar() {
+  const location = useLocation();
+
+  const { pathname } = location;
+
+  const splitLocation = pathname.split("/");
+
   return (
     <div className="sidebar">
-      <Link to="/userList" style={{ textDecoration: "none" }}>
-        <SidebarOption Icon={ListAltIcon} title="Active Users" selected />
-      </Link>
-      <Link to="/" activeClassName="active" style={{ textDecoration: "none" }}>
-        <SidebarOption Icon={People} title="Total Users" />
-      </Link>
       <Link to="/" style={{ textDecoration: "none" }}>
-        <SidebarOption Icon={PersonAddDisabledIcon} title="Inactive User" />
+        <SidebarOption
+          Icon={People}
+          title="Total Users"
+          selected={splitLocation[1] === "" ? "active" : ""}
+        />
+      </Link>
+
+      <Link to="/userList" style={{ textDecoration: "none" }}>
+        <SidebarOption
+          Icon={ListAltIcon}
+          title="Active Users"
+          selected={splitLocation[1] === "userList" ? "active" : ""}
+        />
+      </Link>
+
+      <Link to="/category" style={{ textDecoration: "none" }}>
+        <SidebarOption
+          Icon={PersonAddDisabledIcon}
+          title="Category"
+          selected={splitLocation[1] === "category" ? "active" : ""}
+        />
       </Link>
       <Link to="/country" style={{ textDecoration: "none" }}>
-        <SidebarOption Icon={LocationCityIcon} title="Country" />
+        <SidebarOption
+          Icon={LocationCityIcon}
+          title="Country"
+          selected={splitLocation[1] === "country" ? "active" : ""}
+        />
       </Link>
 
       <Link to="/product" style={{ textDecoration: "none" }}>
-        <SidebarOption Icon={ProductionQuantityLimitsIcon} title="Products" />
+        <SidebarOption
+          Icon={ProductionQuantityLimitsIcon}
+          title="Products"
+          selected={splitLocation[1] === "product" ? "active" : ""}
+        />
       </Link>
     </div>
   );

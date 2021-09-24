@@ -1,5 +1,5 @@
 .home {
-  flex: 1;
+  flex: 0.7;
   flex-direction: row;
   background-color: cadetblue;
   margin-left: 10px;
