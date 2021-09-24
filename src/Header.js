@@ -14,7 +14,7 @@ function Header() {
           <Menu />
         </IconButton>
 
-        <h2>User Managment</h2>
+        <h2>Admin Dashboard</h2>
       </div>
 
       <div className="header__right">
