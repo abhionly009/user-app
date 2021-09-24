@@ -10,4 +10,4 @@ We have few feature like
 
 user will login here with his/her admin credentials and if succeed then they will navigate to home page which will look like this
 
-
+![admin](https://user-images.githubusercontent.com/50333572/134748702-7aeae18d-9412-46aa-8c53-f7e12612544a.png)
