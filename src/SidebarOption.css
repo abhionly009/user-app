@@ -3,7 +3,7 @@
   height: 40px;
   padding: 0 10px;
   cursor: pointer;
-  margin-top: 5px;
+  margin-top: 10px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -16,7 +16,7 @@
 
 .sidebarOption--active {
   color: white;
-  background-color: khaki;
+  background-color: rgb(140, 155, 240);
 }
 
 .sidebarOption:hover,

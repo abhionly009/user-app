@@ -11,20 +11,20 @@ import { Link, NavLink } from "react-router-dom";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <Link to="/userList">
+      <Link to="/userList" style={{ textDecoration: "none" }}>
         <SidebarOption Icon={ListAltIcon} title="Active Users" selected />
       </Link>
-      <NavLink to="/" activeClassName="active">
+      <Link to="/" activeClassName="active" style={{ textDecoration: "none" }}>
         <SidebarOption Icon={People} title="Total Users" />
-      </NavLink>
-      <Link to="/">
+      </Link>
+      <Link to="/" style={{ textDecoration: "none" }}>
         <SidebarOption Icon={PersonAddDisabledIcon} title="Inactive User" />
       </Link>
-      <Link to="/country">
+      <Link to="/country" style={{ textDecoration: "none" }}>
         <SidebarOption Icon={LocationCityIcon} title="Country" />
       </Link>
 
-      <Link to="/product">
+      <Link to="/product" style={{ textDecoration: "none" }}>
         <SidebarOption Icon={ProductionQuantityLimitsIcon} title="Products" />
       </Link>
     </div>

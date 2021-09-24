@@ -1,3 +1,5 @@
+export const baseUrl = "http://192.168.225.40:8089";
+
 const requests = {
   login: `/login`,
   signup: `/register`,
@@ -5,7 +7,6 @@ const requests = {
   updateProfile: `/updateProfile`,
   verifyEmail: `/verifyEmail`,
   userList: `/userList`,
-
   allProduct: "/product/allProduct",
   productByCategory: "/product/productByCategory",
 };

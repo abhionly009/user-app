@@ -1,6 +1,6 @@
 .home {
   flex: 1;
-  margin-left: 10px;
   flex-direction: row;
   background-color: cadetblue;
+  margin-left: 10px;
 }
