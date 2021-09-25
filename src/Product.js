@@ -13,7 +13,7 @@ function Product() {
       setProducts(request.data);
     }
     fetchDetails();
-  }, [requests.allProduct]);
+  }, []);
 
   return (
     <div className="product">

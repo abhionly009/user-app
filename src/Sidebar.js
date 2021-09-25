@@ -17,11 +17,11 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      <Link to="/" style={{ textDecoration: "none" }}>
+      <Link to="/total" style={{ textDecoration: "none" }}>
         <SidebarOption
           Icon={People}
-          title="Total Users"
-          selected={splitLocation[1] === "" ? "active" : ""}
+          title="Dash Board"
+          selected={splitLocation[1] === "/total" ? "active" : ""}
         />
       </Link>
 

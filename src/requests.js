@@ -9,6 +9,7 @@ const requests = {
   userList: `/userList`,
   allProduct: "/product/allProduct",
   productByCategory: "/product/productByCategory",
+  home: "/home/data",
 };
 
 export default requests;

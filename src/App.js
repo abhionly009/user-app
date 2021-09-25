@@ -9,7 +9,7 @@ import LandingPage from "./LandingPage";
 import Product from "./Product";
 import Country from "./Country";
 import Category from "./Category";
-
+import DashBoardHome from "./DashBoardHome";
 function App() {
   return (
     <Router>
@@ -35,6 +35,10 @@ function App() {
 
               <Route path="/category">
                 <Category />
+              </Route>
+
+              <Route path="/total">
+                <DashBoardHome />
               </Route>
 
               <Route path="/country">

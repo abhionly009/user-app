@@ -1,0 +1,11 @@
+.homeRow {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid whitesmoke;
+  justify-content: center;
+  background-color: rgb(189, 214, 214);
+  align-items: center;
+}
