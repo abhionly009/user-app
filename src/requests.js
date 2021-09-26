@@ -10,6 +10,7 @@ const requests = {
   allProduct: "/product/allProduct",
   productByCategory: "/product/productByCategory",
   home: "/home/data",
+  allCategory: "/category/all",
 };
 
 export default requests;
