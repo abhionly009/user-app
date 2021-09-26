@@ -10,15 +10,25 @@
 .userInput {
   padding: 10px;
   margin: 5px;
-  border-radius: 1px solid;
   width: 18rem;
+  outline: none;
+}
+
+.userInput:focus {
+  outline: none;
 }
 
 .registerbtn {
-  background-color: rgb(54, 8, 139);
+  background-color: rgb(118, 67, 238);
+
   color: whitesmoke;
-  padding: 5px;
+  padding: 10px;
   width: 18rem;
-  border-radius: 5px;
+  border: none;
   margin-top: 20px;
+  /* outline: none; */
+}
+
+.errorMsg {
+  color: red;
 }

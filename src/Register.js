@@ -2,15 +2,22 @@ import React, { useState } from "react";
 import "./Register.css";
 import axios from "./axios";
 import requests from "./requests";
+import { Label } from "@material-ui/icons";
 
 function Regiter() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mobile, setMobile] = useState("");
+  const [nameError, setNameError] = useState("Name is required filed");
+  const [emailError, setEmailError] = useState("Email Field is required");
+  const [passwordError, setPasswordError] = useState("");
+  const [mobileError, setMobileError] = useState("");
 
-  function registerUserHandler() {
-    console.log(name, email, password, mobile);
+  function registerUserHandler(e) {
+    e.preventDefault();
+    console.log(e);
+
     const data = {
       name: name,
       email: email,
@@ -60,7 +67,12 @@ function Regiter() {
           setMobile(e.target.value);
         }}
       />
-      <button className="registerbtn" onClick={registerUserHandler}>
+      <button
+        className="registerbtn"
+        onClick={(e) => {
+          registerUserHandler(e);
+        }}
+      >
         Register
       </button>
     </div>
