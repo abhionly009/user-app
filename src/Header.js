@@ -5,8 +5,9 @@ import AppIcon from "@material-ui/icons/Apps";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/NotificationImportant";
 import "./Header.css";
-
 function Header() {
+  const userinfo = localStorage.getItem("userinfo");
+
   return (
     <div className="header">
       <div className="header__left">

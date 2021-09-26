@@ -1,20 +1,35 @@
 import React, { useState } from "react";
-import ButtonWithImage from "./ButtonWithImage";
 import "./Login.css";
-import Google from "./google.png";
-import GitHub from "./github.png";
-import Facebook from "./facebook.png";
-import { facebookProvider } from "./config/authMethod";
 import { googleProvider } from "./config/authMethod";
 import socialMediaAuth from "./service/auth";
+import axios from "./axios";
+import requests from "./requests";
+import { useHistory } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [user, setUser] = useState();
+  let history = useHistory();
 
-  const login = () => {
-    console.log(email, password);
-  };
+  function loginUserHandler() {
+    const data = {
+      emailId: email,
+      password: password,
+    };
+
+    console.log(data);
+    async function login() {
+      const response = await axios.post(requests.login, data);
+      console.log(response);
+      setUser(response.data);
+      localStorage.setItem("userinfo", response.data.userInfo);
+      console.log(user);
+      history.push("/total");
+    }
+
+    login();
+  }
 
   const handleOnClick = async (provider) => {
     const res = await socialMediaAuth(provider);
@@ -42,7 +57,7 @@ function Login() {
         }}
       />
 
-      <button onClick={login} className="btn">
+      <button onClick={loginUserHandler} className="btn">
         Login
       </button>
 
@@ -52,7 +67,7 @@ function Login() {
         }}
         className="btn"
       >
-        Login with facebook
+        Login with Google
       </button>
 
       {/* <ButtonWithImage image={Google} name="Google" />

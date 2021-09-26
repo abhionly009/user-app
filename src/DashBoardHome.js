@@ -9,7 +9,6 @@ function DashBoardHome() {
   useEffect(() => {
     async function fetchHomeInfo() {
       const response = await axios.get(requests.home);
-      console.log(response.data);
       setHome(response.data);
     }
 
@@ -19,7 +18,7 @@ function DashBoardHome() {
   return (
     <div className="dashboard">
       {home.map((item) => {
-        return <HomeRow data={item} />;
+        return <HomeRow data={item} key={item.name} />;
       })}
     </div>
   );

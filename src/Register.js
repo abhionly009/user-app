@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./Register.css";
-import ButtonWithImage from "./ButtonWithImage";
-import Google from "./google.png";
-import GitHub from "./github.png";
-import Facebook from "./facebook.png";
+import axios from "./axios";
+import requests from "./requests";
 
 function Regiter() {
   const [name, setName] = useState("");
@@ -13,6 +11,19 @@ function Regiter() {
 
   function registerUserHandler() {
     console.log(name, email, password, mobile);
+    const data = {
+      name: name,
+      email: email,
+      password: password,
+      mobile: mobile,
+    };
+
+    async function registerUser() {
+      const response = await axios.post(requests.signup, data);
+      console.log(response);
+    }
+
+    registerUser();
   }
 
   return (
@@ -52,10 +63,6 @@ function Regiter() {
       <button className="registerbtn" onClick={registerUserHandler}>
         Register
       </button>
-
-      {/* <ButtonWithImage image={Google} name="Google" />
-      <ButtonWithImage image={Facebook} name="Facebook" />
-      <ButtonWithImage image={GitHub} name="GitHub" /> */}
     </div>
   );
 }
