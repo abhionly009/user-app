@@ -1,7 +1,7 @@
 .dashboard {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: left;
+  flex-wrap: wrap;
   flex: 1;
 }
