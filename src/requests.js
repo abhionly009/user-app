@@ -11,6 +11,7 @@ const requests = {
   productByCategory: "/product/productByCategory",
   home: "/home/data",
   allCategory: "/category/all",
+  cities: "/city/get",
 };
 
 export default requests;

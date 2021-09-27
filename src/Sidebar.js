@@ -40,11 +40,11 @@ function Sidebar() {
           selected={splitLocation[1] === "category" ? "active" : ""}
         />
       </Link>
-      <Link to="/country" style={{ textDecoration: "none" }}>
+      <Link to="/city" style={{ textDecoration: "none" }}>
         <SidebarOption
           Icon={LocationCityIcon}
-          title="Country"
-          selected={splitLocation[1] === "country" ? "active" : ""}
+          title="Cities"
+          selected={splitLocation[1] === "city" ? "active" : ""}
         />
       </Link>
 

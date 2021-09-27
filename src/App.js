@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import UserList from "./UserList";
 import LandingPage from "./LandingPage";
 import Product from "./Product";
-import Country from "./Country";
+import City from "./City";
 import Category from "./Category";
 import DashBoardHome from "./DashBoardHome";
 function App() {
@@ -41,8 +41,8 @@ function App() {
                 <DashBoardHome />
               </Route>
 
-              <Route path="/country">
-                <Country />
+              <Route path="/city">
+                <City />
               </Route>
               <Route path="/home">
                 <Home />
