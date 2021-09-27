@@ -8,6 +8,7 @@ function City() {
   const [cities, setCities] = useState([]);
   const [cityName, setCityName] = useState("");
   const [isAdded, setIsAdded] = useState(false);
+  const [error, setError] = useState("");
 
   async function getCity() {
     const response = await axios(requests.cities);
@@ -19,7 +20,6 @@ function City() {
     const data = {
       name: cityName,
     };
-    if (data.name.length < 1) return alert("Please enter valid City name");
 
     const addCityResponse = await axios.post(requests.addCity, data);
     if (addCityResponse.status === 200) {
@@ -39,20 +39,36 @@ function City() {
   }, [isAdded]);
 
   const addCityHandler = () => {
+    if (cityName.length < 1) {
+      setError("City Name is required");
+      return;
+    }
+
     addCity();
   };
 
   return (
     <div className="city">
       <div className="city--add">
-        <input
-          type="text"
-          placeholder="Enter city name"
-          onChange={(e) => {
-            setCityName(e.target.value);
-          }}
-        ></input>
-        <button onClick={addCityHandler}>Add City</button>
+        <div className="city__inputWithLabel">
+          <input
+            type="text"
+            placeholder="Enter city name"
+            className="cityName"
+            name="cityname"
+            onChange={(e) => {
+              setCityName(e.target.value);
+              setError("");
+            }}
+          />
+          <label htmlFor="cityname" className="error">
+            {error}
+          </label>
+        </div>
+
+        <button onClick={addCityHandler} className="addCityBtn">
+          Add City
+        </button>
       </div>
       <div className="city__item">
         {cities.map((item) => {

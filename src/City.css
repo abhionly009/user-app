@@ -10,22 +10,32 @@
   /* background-color: blueviolet; */
   display: flex;
   justify-content: center;
+  flex-direction: row;
 }
 
-.city--add > input {
+.city__inputWithLabel {
+  display: flex;
+  flex-direction: column;
+}
+
+.cityName {
   padding: 10px;
   outline: none;
   margin-right: 10px;
 }
 
-.city--add > button {
+.addCityBtn {
   padding: 14px 28px;
+  height: 40px;
   color: white;
   background-color: green;
   border: none;
   outline: none;
 }
-
+.error {
+  color: red;
+  font-weight: 400;
+}
 .city__item {
   display: flex;
   flex-direction: row;
