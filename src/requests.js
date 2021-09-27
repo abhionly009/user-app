@@ -12,6 +12,7 @@ const requests = {
   home: "/home/data",
   allCategory: "/category/all",
   cities: "/city/get",
+  addCity: "/city/create",
 };
 
 export default requests;

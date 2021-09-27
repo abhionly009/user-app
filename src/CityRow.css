@@ -1,10 +1,11 @@
 .cityRow {
   display: flex;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 100px;
   background-color: rgb(101, 120, 126);
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  color: black;
+  border-radius: 5%;
+  color: white;
+  margin: 10px;
 }

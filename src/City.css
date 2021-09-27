@@ -1,7 +1,35 @@
 .city {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   /* justify-content: space-evenly; */
+  /* flex-wrap: wrap; */
+  align-items: center;
+}
+
+.city--add {
+  /* background-color: blueviolet; */
+  display: flex;
+  justify-content: center;
+}
+
+.city--add > input {
+  padding: 10px;
+  outline: none;
+  margin-right: 10px;
+}
+
+.city--add > button {
+  padding: 14px 28px;
+  color: white;
+  background-color: green;
+  border: none;
+  outline: none;
+}
+
+.city__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
   flex-wrap: wrap;
   align-items: center;
 }
