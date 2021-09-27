@@ -29,12 +29,10 @@ function City() {
   }
 
   useEffect(() => {
-    console.log("on render");
     getCity();
   }, []);
 
   useEffect(() => {
-    console.log("on Change in is Added");
     getCity();
   }, [isAdded]);
 

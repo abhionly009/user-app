@@ -10,24 +10,48 @@ function Category() {
   const [categoryNameError, setCategoryNameError] = useState("");
   const [categoryImage, setCategoryImage] = useState("");
   const [categoryImageError, setCategoryImageError] = useState("");
+  const [isCategoryAdded, setIsCategoryAdded] = useState(false);
+  const [categoryDescription, setCategoryDescription] = useState("");
+  const [categoryDescriptionError, setCategoryDescriptionError] = useState("");
 
   useEffect(() => {
-    async function getCategory() {
-      const response = await axios.get(requests.allCategory);
-
-      console.log("Getting called ", response);
-
-      setCategory(response.data);
-    }
-
     getCategory();
   }, []);
 
+  useEffect(() => {
+    getCategory();
+  }, [isCategoryAdded]);
+
+  async function getCategory() {
+    const response = await axios.get(requests.allCategory);
+
+    if (response.status === 200) {
+      setCategory(response.data);
+    }
+  }
+
+  async function addCategory() {
+    const data = {
+      name: categoryName,
+      description: categoryDescription,
+      url: categoryImage,
+    };
+
+    const addCityResponse = await axios.post(requests.addCategory, data);
+    if (addCityResponse.status === 200) {
+      setIsCategoryAdded(true);
+    }
+  }
+
   const addCategoryHandler = () => {
-    if (categoryName.length < 1 && categoryImage.length < 1) {
+    if (
+      categoryDescription.length < 1 &&
+      categoryName.length < 1 &&
+      categoryImage.length < 1
+    ) {
       setCategoryNameError("Category Name is required");
       setCategoryImageError("Category Image is required");
-
+      setCategoryDescriptionError("Description is required");
       return;
     }
 
@@ -40,7 +64,13 @@ function Category() {
       setCategoryImageError("Category Image is required");
     }
 
-    console.log(categoryName, categoryImage);
+    if (categoryDescription.length < 1) {
+      setCategoryDescriptionError("Category Description is required");
+    }
+
+    console.log(categoryName, categoryImage, categoryDescription);
+
+    addCategory();
   };
 
   return (
@@ -79,6 +109,24 @@ function Category() {
             {categoryImageError}
           </label>
         </div>
+
+        <div className="inputWithLabel">
+          <input
+            type="text"
+            name="categoryDescription"
+            id=""
+            className="categoryName"
+            placeholder="Enter Description"
+            onChange={(e) => {
+              setCategoryDescription(e.target.value);
+              setCategoryDescriptionError("");
+            }}
+          />
+          <label htmlFor="categoryDescription" className="error">
+            {categoryDescriptionError}
+          </label>
+        </div>
+
         <button onClick={addCategoryHandler} className="addCategoryBtn">
           Add Category
         </button>

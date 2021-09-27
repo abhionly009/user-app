@@ -13,6 +13,7 @@ const requests = {
   allCategory: "/category/all",
   cities: "/city/get",
   addCity: "/city/create",
+  addCategory: "/category/create",
 };
 
 export default requests;
