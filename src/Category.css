@@ -2,4 +2,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
+}
+.category--add {
+  display: flex;
+  flex-direction: row;
+}
+
+.categoryImage,
+.categoryName {
+  outline: none;
+  padding: 14px 28px;
+  margin-right: 5px;
+}
+
+.addCategoryBtn {
+  background-color: green;
+  color: white;
+  height: 40px;
+  padding: 14px 28px;
+  text-align: center;
+}
+
+.categoryItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.inputWithLabel {
+  display: flex;
+  flex-direction: column;
 }

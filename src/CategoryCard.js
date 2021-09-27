@@ -1,5 +1,5 @@
 import React from "react";
-import "./Category.css";
+import "./CategoryCard.css";
 
 function CategoryCard(data) {
   return (
