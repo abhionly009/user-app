@@ -1,15 +1,26 @@
 import React from "react";
-import PeopleRounded from "@material-ui/icons/PeopleRounded";
+import { VerifiedUserRounded } from "@material-ui/icons";
 import "./UserRow.css";
-function UserRow({ id, title, status, name, email, mobile }) {
+function UserRow(user) {
+  console.log("object", user);
   return (
     <div className="userRow">
-      <PeopleRounded />
-      <h5>{title}</h5>
-      <p>{name}</p>
-      <p>{email}</p>
-      <p>{mobile}</p>
-      <h6>{status}</h6>
+      <h5 className="username">{user.data.name}</h5>
+      <p>{user.data.email}</p>
+
+      {user.data.emailVerified ? (
+        <VerifiedUserRounded className="verified" />
+      ) : (
+        ""
+      )}
+
+      <p>{user.data.mobile}</p>
+      {user.data.mobileVerified ? (
+        <VerifiedUserRounded className="verified" />
+      ) : (
+        ""
+      )}
+      <p>{user.data.role}</p>
     </div>
   );
 }

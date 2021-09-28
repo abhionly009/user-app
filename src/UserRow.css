@@ -2,15 +2,30 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid whitesmoke;
-  border-right: 1px solid whitesmoke;
-  background-color: burlywood;
+  border-bottom: 2px solid whitesmoke;
+  border-right: 2px solid whitesmoke;
+  justify-content: space-evenly;
 }
 
 .userRow > p {
   margin: 5px;
 }
 
+.username {
+  text-transform: capitalize;
+}
+.notverified {
+  display: none;
+}
+.verified {
+  display: inline-block;
+  color: green;
+}
+
 .userRow > h5 {
   margin: 5px;
+}
+
+.userRow:nth-child(even) {
+  background-color: #ddd;
 }

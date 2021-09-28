@@ -1,27 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import UserRow from "./UserRow";
 import "./UserList.css";
+import requests from "./requests";
+import axios from "./axios";
+
 function UserList() {
-  "id, title, status, name, email, mobile";
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    getUsers();
+  }, []);
+
+  async function getUsers() {
+    const response = await axios.get(requests.userList);
+    if (response.status === 200) {
+      setUsers(response.data);
+    }
+  }
+
   return (
     <div className="userList">
-      <UserRow
-        id="1"
-        title="Software Engineer"
-        status="active"
-        name="Abhinandan"
-        email="abhionly009@gmail.com"
-        mobile="9005805189"
-      />
-
-      <UserRow
-        id="1"
-        title="Software Engineer"
-        status="active"
-        name="Abhinandan"
-        email="abhionly009@gmail.com"
-        mobile="9005805189"
-      />
+      {users.map((user) => {
+        return <UserRow data={user} />;
+      })}
     </div>
   );
 }
