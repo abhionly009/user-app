@@ -6,6 +6,12 @@ import axios from "./axios";
 
 function UserList() {
   const [users, setUsers] = useState([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [role, setRole] = useState("");
+  const [emailVerified, setEmailVerified] = useState("");
+
   useEffect(() => {
     getUsers();
   }, []);
@@ -17,11 +23,18 @@ function UserList() {
     }
   }
 
+  const handler = (e) => {
+    // e.preventDefault();
+    console.log(emailVerified);
+  };
+
   return (
     <div className="userList">
-      {users.map((user) => {
-        return <UserRow data={user} />;
-      })}
+      <div className="userList__item">
+        {users.map((user) => {
+          return <UserRow data={user} />;
+        })}
+      </div>
     </div>
   );
 }

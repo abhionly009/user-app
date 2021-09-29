@@ -11,9 +11,6 @@
   margin: 5px;
 }
 
-.username {
-  text-transform: capitalize;
-}
 .notverified {
   display: none;
 }
@@ -28,4 +25,21 @@
 
 .userRow:nth-child(even) {
   background-color: #ddd;
+}
+
+.email {
+  display: flex;
+  flex-direction: row;
+  flex: 0.3;
+}
+
+.mobile {
+  display: flex;
+  flex-direction: row;
+  flex: 0.3;
+}
+
+.username {
+  text-transform: capitalize;
+  flex: 0.2;
 }
