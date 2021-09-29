@@ -27,15 +27,16 @@ function City() {
   };
 
   async function addCity() {
+    setIsAdded(false);
     const data = {
       name: cityName,
     };
 
     const addCityResponse = await axios.post(requests.addCity, data);
     if (addCityResponse.status === 200) {
-      console.log(cities);
-      notify();
+      console.log(addCityResponse.data);
       setIsAdded(true);
+      notify();
     }
   }
 
