@@ -29,7 +29,7 @@
   text-align: center;
 }
 
-.product__card > button {
+/* .product__card > button {
   cursor: pointer;
   position: relative;
   z-index: 999;
@@ -42,4 +42,22 @@
 
 .product__card > button:hover {
   background-color: darkblue;
+} */
+
+.product--alter {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.update {
+  flex: 0.5;
+  outline: none;
+  border: none;
+}
+
+.delete {
+  flex: 0.5;
+  outline: none;
+  border: none;
 }
