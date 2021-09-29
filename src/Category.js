@@ -3,6 +3,10 @@ import "./Category.css";
 import axios from "./axios";
 import requests from "./requests";
 import CategoryCard from "./CategoryCard";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 function Category() {
   const [category, setCategory] = useState([]);
@@ -30,7 +34,13 @@ function Category() {
     }
   }
 
+  const notify = () => {
+    toast.success("Category Added Successfully!", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
   async function addCategory() {
+    setIsCategoryAdded(false);
     const data = {
       name: categoryName,
       description: categoryDescription,
@@ -40,6 +50,7 @@ function Category() {
     const addCityResponse = await axios.post(requests.addCategory, data);
     if (addCityResponse.status === 200) {
       setIsCategoryAdded(true);
+      notify();
     }
   }
 
@@ -75,6 +86,10 @@ function Category() {
 
   return (
     <div className="category">
+      <div className="category__toast">
+        <ToastContainer />
+      </div>
+
       <div className="category--add">
         <div className="inputWithLabel">
           <input
