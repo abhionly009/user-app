@@ -5,3 +5,19 @@
   margin: 10px;
   flex: 1;
 }
+
+.userList__filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  margin: 10px;
+  font-size: 20px;
+}
+
+input {
+  margin: 10px;
+}
