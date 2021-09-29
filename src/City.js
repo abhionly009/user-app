@@ -4,6 +4,11 @@ import axios from "./axios";
 import CityRow from "./CityRow";
 import "./City.css";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
+
 function City() {
   const [cities, setCities] = useState([]);
   const [cityName, setCityName] = useState("");
@@ -12,9 +17,14 @@ function City() {
 
   async function getCity() {
     const response = await axios(requests.cities);
-    console.log(response.data);
     setCities(response.data);
   }
+
+  const notify = () => {
+    toast.success("City Added Successfully!", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
 
   async function addCity() {
     const data = {
@@ -23,7 +33,8 @@ function City() {
 
     const addCityResponse = await axios.post(requests.addCity, data);
     if (addCityResponse.status === 200) {
-      setCityName("");
+      console.log(cities);
+      notify();
       setIsAdded(true);
     }
   }
@@ -47,6 +58,10 @@ function City() {
 
   return (
     <div className="city">
+      <div className="city__toast">
+        <ToastContainer />
+      </div>
+
       <div className="city--add">
         <div className="city__inputWithLabel">
           <input

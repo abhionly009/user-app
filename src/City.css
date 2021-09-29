@@ -6,6 +6,11 @@
   align-items: center;
 }
 
+.city__toast {
+  display: flex;
+  height: 40px;
+}
+
 .city--add {
   /* background-color: blueviolet; */
   display: flex;
