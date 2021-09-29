@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/login">
+          <Route exact path="/">
             <LandingPage />
           </Route>
 
@@ -50,9 +50,9 @@ function App() {
             </div>
           </div>
 
-          <Route path="/">
+          {/* <Route path="/">
             <LandingPage />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>
