@@ -61,3 +61,34 @@
   outline: none;
   border: none;
 }
+
+.show__modal {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  padding: 10px;
+  background-color: rgb(154, 163, 160);
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.show__modal > input {
+  padding: 14px 28px;
+  border: none;
+  outline: none;
+}
+.updateBtn {
+  background-color: blue;
+  color: whitesmoke;
+  padding: 5px;
+}
+
+.cancelBtn {
+  background-color: red;
+  color: white;
+  padding: 5px;
+}
+.hide__modal {
+  display: none;
+}
