@@ -54,12 +54,14 @@
   flex: 0.5;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .delete {
   flex: 0.5;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .show__modal {

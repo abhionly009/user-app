@@ -24,6 +24,7 @@ function Product() {
             price={item.price}
             imageUrl={item.imageUrl}
             brand={item.brand}
+            uniqueId={item.pId}
           />
         );
       })}
