@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./ProductCard.css";
 import { DeleteRounded } from "@material-ui/icons";
 import { EditRounded } from "@material-ui/icons";
+import axios from "./axios";
+import requests from "./requests";
 
 function ProductCard({ name, price, imageUrl, brand, uniqueId }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,7 +25,7 @@ function ProductCard({ name, price, imageUrl, brand, uniqueId }) {
     setIsModalOpen(false);
   };
 
-  const updateProductHandler = () => {
+  async function updateProduct() {
     const data = {
       name: updatedName,
       brand: updatedBrand,
@@ -31,8 +33,14 @@ function ProductCard({ name, price, imageUrl, brand, uniqueId }) {
       imageUrl: updatedImage,
       id: uniqueId,
     };
+    const response = axios.put(requests.updateProduct, data, {
+      headers: { "Access-Control-Allow-Origin": "*" },
+    });
+    console.log(response.data);
+  }
 
-    console.log(data);
+  const updateProductHandler = () => {
+    updateProduct();
   };
 
   return (

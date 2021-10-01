@@ -14,7 +14,7 @@ const requests = {
   cities: "/city/get",
   addCity: "/city/create",
   addCategory: "/category/create",
-  updateProduct: "/",
+  updateProduct: "/product/update",
 };
 
 export default requests;
