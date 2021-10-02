@@ -21,10 +21,12 @@ function Login() {
     console.log(data);
     async function login() {
       const response = await axios.post(requests.login, data);
-      console.log(response);
-      setUser(response.data);
-      localStorage.setItem("userinfo", response.data.userInfo);
-      console.log(user);
+      console.log(response.data.userInfo);
+      setUser(response.data.userInfo);
+      localStorage.setItem(
+        "userdetails",
+        JSON.stringify(response.data.userInfo)
+      );
       history.push("/total");
     }
 

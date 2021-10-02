@@ -33,6 +33,8 @@ function ProductCard({ name, price, imageUrl, brand, uniqueId }) {
       imageUrl: updatedImage,
       id: uniqueId,
     };
+
+    console.log(data);
     const response = axios.put(requests.updateProduct, data, {
       headers: { "Access-Control-Allow-Origin": "*" },
     });
