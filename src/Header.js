@@ -15,17 +15,20 @@ function Header() {
   const history = useHistory();
 
   const userinfo = localStorage.getItem("userdetails");
+
   const userData = JSON.parse(userinfo);
+
+  if (userData == null || userData == "") {
+    history.push("/");
+    return null;
+  }
+  const imageUrl = "http://localhost:8089" + `${userData.profilePic}`;
 
   const profileSectionHandler = () => {
     if (userData != null) setIsModalOpen(!isModalOpen);
   };
 
   async function logout() {
-    const bodyParameters = {
-      authToken: userData.authToken,
-    };
-
     const logoutRequest = requests.logout + `${userData.authToken}`;
 
     const response = await axios.post(logoutRequest);
@@ -56,11 +59,7 @@ function Header() {
             <NotificationsIcon />
           </IconButton>
           <IconButton onClick={profileSectionHandler}>
-            <img
-              src="http://localhost:8089/user-photos/18/IMG_20171101_103419.jpg"
-              alt="user"
-              className="imageCircle"
-            />
+            <img src={imageUrl} alt="user" className="imageCircle" />
           </IconButton>
         </div>
         <div
