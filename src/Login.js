@@ -20,14 +20,24 @@ function Login() {
 
     console.log(data);
     async function login() {
-      const response = await axios.post(requests.login, data);
-      console.log(response.data.userInfo);
-      setUser(response.data.userInfo);
-      localStorage.setItem(
-        "userdetails",
-        JSON.stringify(response.data.userInfo)
-      );
-      history.push("/total");
+      await axios
+        .post(requests.login, data)
+        .then(function (response) {
+          console.log(response.data.userInfo);
+          setUser(response.data.userInfo);
+          localStorage.setItem(
+            "userdetails",
+            JSON.stringify(response.data.userInfo)
+          );
+          history.push("/total");
+        })
+        .catch(function (error) {
+          // alert(error);
+          if (error.response.data.status === 400) {
+            alert(error.response.data.message);
+          }
+          console.log(error.response.data);
+        });
     }
 
     login();
