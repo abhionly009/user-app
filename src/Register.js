@@ -25,8 +25,14 @@ function Regiter() {
     };
 
     async function registerUser() {
-      const response = await axios.post(requests.signup, data);
-      console.log(response);
+      await axios
+        .post(requests.signup, data)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error.response.data);
+        });
     }
 
     registerUser();
