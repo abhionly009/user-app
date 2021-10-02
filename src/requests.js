@@ -3,7 +3,7 @@ export const baseUrl = "http://192.168.225.40:8089";
 const requests = {
   login: `/login`,
   signup: `/register`,
-  logout: `/logout`,
+  logout: `/logout?authToken=`,
   updateProfile: `/updateProfile`,
   verifyEmail: `/verifyEmail`,
   userList: `/userList`,
