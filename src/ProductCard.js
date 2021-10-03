@@ -93,10 +93,12 @@ function ProductCard({ name, price, imageUrl, brand, uniqueId }) {
         </button>
       </div>
 
-      <p className="brand">{brand}</p>
+      <div className="brandwithprice">
+        <p className="brand">{brand}</p>
+        <p className="price">{price}</p>
+      </div>
       <p className="name">{name}</p>
       <img src={imageUrl} alt={name} />
-      <p className="price">{price}</p>
 
       <div className="product--alter">
         <button onClick={openModalHandler} className="update">
