@@ -84,13 +84,14 @@ function ProductCard({ name, price, imageUrl, brand, uniqueId }) {
             setUpdateImage(e.target.value);
           }}
         />
-
-        <button className="updateBtn" onClick={updateProductHandler}>
-          Update
-        </button>
-        <button className="cancelBtn" onClick={closeModalHandler}>
-          Cancel
-        </button>
+        <div className="updatewithcancel">
+          <button className="updateBtn" onClick={updateProductHandler}>
+            Update
+          </button>
+          <button className="cancelBtn" onClick={closeModalHandler}>
+            Cancel
+          </button>
+        </div>
       </div>
 
       <div className="brandwithprice">
